@@ -1,0 +1,160 @@
+.hero-art {
+  --navy: #061c39;
+  --blue: #0075df;
+  --cyan: #00a3ee;
+  color: var(--navy);
+}
+
+.hero-art {
+  height: 528px;
+  background: #e9f2fc;
+  border-radius: 110px 14px 14px 14px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-art .art-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#bcd5eb55 1px, transparent 1px),
+    linear-gradient(90deg, #bcd5eb55 1px, transparent 1px);
+  background-size: 45px 45px;
+  mask-image: linear-gradient(black, transparent);
+}
+.hero-art .art-label {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  letter-spacing: 2px;
+  font-size: 8px;
+}
+.hero-art .orb {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow:
+    inset -22px -22px 45px #002b7855,
+    inset 13px 10px 30px #ffffff70,
+    15px 30px 45px #00396a28;
+}
+.hero-art .orb-one {
+  width: 220px;
+  height: 220px;
+  background: linear-gradient(135deg, #05afff, #0070dd 65%, #0048a7);
+  left: 16%;
+  top: 18%;
+}
+.hero-art .orb-two {
+  width: 170px;
+  height: 170px;
+  background: linear-gradient(130deg, #305d8b, #061c39 70%);
+  right: 8%;
+  top: 37%;
+}
+.hero-art .bridge {
+  position: absolute;
+  width: 230px;
+  height: 125px;
+  border: 28px solid #fff9;
+  border-bottom: 0;
+  transform: rotate(-35deg);
+  border-radius: 150px 150px 0 0;
+  top: 35%;
+  left: 30%;
+  backdrop-filter: blur(5px);
+  box-shadow:
+    5px -10px 20px #fff6,
+    inset 5px 10px 10px #bbdfff;
+}
+.hero-art .art-caption {
+  position: absolute;
+  bottom: 76px;
+  left: 31px;
+  right: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 31px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+.hero-art .art-caption b {
+  font-weight: 600;
+}
+.hero-art .asterisk {
+  font-size: 62px;
+  color: var(--blue);
+}
+.hero-art .art-tag {
+  position: absolute;
+  bottom: 25px;
+  left: 31px;
+  font-size: 8px;
+  letter-spacing: 1.7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-art .dot {
+  height: 7px;
+  width: 7px;
+  display: inline-block;
+  background: var(--cyan);
+  border-radius: 50%;
+}
+
+@media (max-width: 1000px) {
+  .hero-art {
+    height: 470px;
+  }
+  .hero-art .orb-one {
+    width: 180px;
+    height: 180px;
+    left: 8%;
+  }
+  .hero-art .orb-two {
+    width: 140px;
+    height: 140px;
+    right: 5%;
+  }
+  .hero-art .bridge {
+    width: 180px;
+    left: 22%;
+  }
+  .hero-art .art-caption {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-art {
+    height: 410px;
+  }
+  .hero-art .orb-one {
+    width: 190px;
+    height: 190px;
+    left: 18%;
+    top: 13%;
+  }
+  .hero-art .orb-two {
+    width: 145px;
+    height: 145px;
+    top: 32%;
+    right: 12%;
+  }
+  .hero-art .bridge {
+    left: 30%;
+    top: 28%;
+    width: 180px;
+  }
+  .hero-art .art-caption {
+    bottom: 65px;
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-art {
+    border-top-left-radius: 80px;
+  }
+}
