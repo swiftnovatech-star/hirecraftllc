@@ -18,13 +18,13 @@ npm run typecheck
 npm run test:e2e
 ```
 
-The browser tests require Playwright Chromium (`npx playwright install chromium`) and launch their own Next.js development server on port 3100. They cover navigation, mobile layout, inquiry intent, service selection, form validation, email drafts, FAQs, and reduced-motion behavior.
+The browser tests require Playwright Chromium (`npx playwright install chromium`) and launch their own Next.js development server on port 3100. They cover navigation, mobile layout, inquiry intent, service selection, form validation, Web3Forms submission states, FAQs, and reduced-motion behavior. Web3Forms requests are mocked, so tests never send real emails.
 
 ## Pages
 
-- `/`: Services landing page, hero, capabilities, staffing options, approach, and process.
+- `/`: Services landing page with Staffing and Development offerings, hero, capabilities, approach, and process.
 - `/about`: Company purpose, approach, and principles.
-- `/contact`: Hiring and career inquiries, email contact, and FAQs.
+- `/contact`: Staffing, development, and career inquiries, email contact, and FAQs.
 
 ## Brand and content
 
@@ -32,7 +32,9 @@ The supplied HireCraft image informs the navy (`#061c3b`), blue (`#0068d9`), and
 
 The email, `pavan.velaga@gmail.com`, and core staffing descriptions were taken from https://hirecraftllc.net/ on October 22, 2026. The source page lists `(+1) 23456789`, which appears incomplete, and does not publish a street address. Neither a fabricated address nor that placeholder phone is shown. Verified company contact settings live in `src/lib/company.ts`. Additional copy and service positioning are editorial proposals for company review, including contract-to-hire and the specialization categories.
 
-The contact form prepares a `mailto:` draft and provides a clipboard fallback; it does not send mail, store inquiries, or imply successful delivery. Direct email submission would require a server endpoint and an email provider. There are no invented testimonials, placement statistics, or customer logos.
+The contact form submits directly from the browser to [Web3Forms](https://docs.web3forms.com/getting-started/api-reference), using the supplied access key configured in `src/components/contact-form.tsx`. Web3Forms access keys are public form identifiers, as documented in its [official React integration](https://github.com/web3forms/web3forms-react). No additional package or server endpoint is required. The key's associated inbox receives submissions; changing `company.email` only changes the displayed contact address and fallback email link.
+
+Submissions include the visitor's name, email, message, inquiry type, and applicable company/service selection. Success requires both a successful HTTP response and `success: true`. Duplicate submissions are blocked while sending; a hidden honeypot helps filter spam. Errors and a 15-second timeout preserve entered details for retry. Verify the key's inbox and any domain restrictions in Web3Forms before launch. Automated checks do not verify real email delivery. There are no invented testimonials, placement statistics, or customer logos.
 
 ## 21st MCP components
 
@@ -45,7 +47,7 @@ Retrieved through the user's connected 21st MCP and adapted to this brand:
 
 ## Assets
 
-- The current hero illustration is live HTML/CSS in `src/components/hero-art.tsx`, with artwork-only styles extracted from the supplied `style.css` into `src/components/hero-art.css`: gradient spheres, a translucent bordered semicircle, a subtle grid, and editable text. It loads no image asset. `public/images/hero-spheres.webp` is the unused earlier generated version retained for reference.
+- The hero artwork in `src/components/hero-art.tsx` uses CSS orbs, a translucent bridge, and captions styled in `src/components/hero-art.css`, with the rounded outer frame preserved. The earlier `public/images/hero-network.jpeg` and `public/images/hero-spheres.webp` assets are retained but are not displayed.
 
 - [Team photograph](https://images.unsplash.com/photo-1521737711867-e3b97375f902) served from Unsplash.
 - [Office photograph](https://images.unsplash.com/photo-1497366811353-6870744d04b2) served from Unsplash.

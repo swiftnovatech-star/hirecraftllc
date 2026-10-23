@@ -460,7 +460,7 @@ p {
 }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 19px;
 }
 .services-grid > div {
@@ -1190,14 +1190,14 @@ p {
   width: 100%;
   justify-content: space-between;
 }
-.draft-panel {
+.submission-panel {
   border: 1px solid #bfd9f5;
   background: #f2f8ff;
   border-radius: 8px;
   padding: 18px;
   margin-top: 22px;
 }
-.draft-heading {
+.submission-heading {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1205,33 +1205,28 @@ p {
   font-size: 12px;
   font-weight: 700;
 }
-.draft-panel p {
+.submission-panel p {
   font-size: 10px;
   line-height: 1.8;
   margin-top: 9px;
 }
-.draft-actions {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 15px;
+.submission-error {
+  border-color: #edc1c1;
+  background: #fff5f5;
 }
-.draft-actions .button {
-  min-height: 40px;
-  font-size: 10px;
-  padding: 9px 12px;
-  gap: 12px;
+.submission-error p {
+  color: #973535;
+  margin-top: 0;
 }
-.copy-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: #245782;
-  border: 0;
-  background: transparent;
-  font-size: 10px;
-  padding: 8px 0;
+.submission-error a {
+  display: inline-block;
+  margin-top: 9px;
+  font-size: 12px;
+  text-decoration: underline;
+}
+.form-feedback {
+  margin-top: 14px;
+  font-size: 12px;
 }
 .contact-faq {
   display: grid;
@@ -1971,10 +1966,10 @@ p {
   .form-submit {
     font-size: 12px;
   }
-  .draft-panel p {
+  .submission-panel p {
     font-size: 12px;
   }
-  .draft-heading {
+  .submission-heading {
     font-size: 13px;
   }
   .contact-faq {

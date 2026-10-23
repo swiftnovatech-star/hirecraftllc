@@ -10,12 +10,10 @@ import {
   Check,
   Code2,
   Database,
-  Fingerprint,
   Layers3,
   Network,
   ShieldCheck,
   Sparkles,
-  Users,
   Workflow,
 } from "lucide-react";
 import { BlurFade } from "@/components/ui/blur-fade";
@@ -28,29 +26,20 @@ const services = [
   {
     number: "01",
     icon: BriefcaseBusiness,
-    title: "Contract staffing",
+    title: "Staffing",
     description:
-      "The right expertise, right when you need it. Bring skilled IT professionals into your team to keep projects moving.",
-    tags: ["Project-based", "Flexible teams"],
-    query: "contract",
+      "Connect with the IT talent your team needs. From flexible project support to permanent hires, we help you find the right people for your next chapter.",
+    query: "staffing",
+    action: "Let’s build your team",
   },
   {
     number: "02",
-    icon: Users,
-    title: "Contract-to-hire",
+    icon: Code2,
+    title: "Development",
     description:
-      "Build confidence before the commitment. Get to know your next team member through real work, in your environment.",
-    tags: ["On-the-job fit", "A path to permanent"],
-    query: "contract-to-hire",
-  },
-  {
-    number: "03",
-    icon: Fingerprint,
-    title: "Direct placement",
-    description:
-      "Find the people who belong in your long-term picture. Thoughtful matches built around your technology and culture.",
-    tags: ["Permanent talent", "Long-term growth"],
-    query: "direct",
+      "Turn your ideas into software that works for your business. We help you plan, build, and improve digital solutions around your goals.",
+    query: "development",
+    action: "Let’s build your solution",
   },
 ];
 
@@ -148,8 +137,8 @@ export default function ServicesPage() {
             </h2>
           </div>
           <p>
-            From a critical project to your next permanent hire, we help you
-            build the team you need, the way you need it.
+            The people to strengthen your team. The development expertise to
+            bring your ideas to life. Two ways to move your business forward.
           </p>
         </BlurFade>
         <div className="services-grid">
@@ -167,16 +156,11 @@ export default function ServicesPage() {
                 </div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <div className="service-tags">
-                  {service.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
                 <Link
                   className="service-link"
                   href={`/contact?intent=hiring&service=${service.query}`}
                 >
-                  Let’s build your team{" "}
+                  {service.action}{" "}
                   <span>
                     <ArrowUpRight size={21} />
                   </span>

@@ -1,19 +1,9 @@
-# CSS hero artwork verification
+# Artwork and services verification
 
-final result: passed
+The CSS orb artwork and its curved frame are restored to the version preceding the uploaded network image. Services now contains two cards: Staffing and Development. Staffing retains contract staffing, contract-to-hire, and direct placement as options; Development opens a project inquiry with the correct service and email subject.
 
-## Current target
+The production build passes. Chromium checks at 1440px, 768px, and 360px confirm two service cards, both orbs, the preserved frame radius, and no horizontal overflow. Screenshots are saved at `/tmp/hirecraft-services-1440.png`, `/tmp/hirecraft-services-768.png`, and `/tmp/hirecraft-services-360.png`.
 
-The artwork rules from the user's `/mnt/HDD/Profiles/style.css` are extracted into `src/components/hero-art.css` and used by `src/components/hero-art.tsx`. Only artwork selectors, their color dependencies, and their responsive rules are imported; unrelated page styles are not copied.
+The contact form now submits through Web3Forms using the supplied access key. Staffing, development, and career inquiries include the appropriate fields and subject. The old email-draft flow and FAQ instructions are replaced by direct submission, success feedback, and retryable errors.
 
-The original rounded frame is preserved rather than using the supplied stylesheet's near-square frame: a pronounced top-left curve and smaller remaining corners. The artwork label is lowered slightly to clear the curve. The surrounding hero layout, headline, actions, and proof statement remain unchanged. Previously removed eyebrow text and floating badge remain absent.
-
-## Evidence
-
-- Chromium checks at 1440px, 900px, 700px, and 360px widths report no horizontal overflow or runtime errors.
-- The artwork heights match the supplied breakpoints: 528px, 470px, and 410px.
-- The top-left frame radius is 110px on desktop and 80px on mobile.
-- Artwork screenshots: `/tmp/hirecraft-extracted-art-1440.png`, `/tmp/hirecraft-extracted-art-900.png`, `/tmp/hirecraft-extracted-art-700.png`, and `/tmp/hirecraft-extracted-art-360.png`.
-- The production build and all eight existing browser tests pass.
-
-The spheres use the supplied gradients and shadows; the bridge uses its original translucent border, rotation, and backdrop blur rather than the previous masked approximation. No raster image is loaded for the hero artwork. Browser verification covers Chromium; other engines have not been tested.
+The production build passes. All 16 browser checks pass across the initial run and targeted rerun: navigation, responsive layout, inquiry payloads, successful reset, duplicate prevention, provider rejection, server errors, invalid JSON, rate limiting, network errors, honeypot behavior, validation, and FAQs. All Web3Forms requests are intercepted with mock responses; no real emails were sent and inbox delivery has not been verified. Other browser engines have not been tested.

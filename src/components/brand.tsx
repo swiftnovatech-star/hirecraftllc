@@ -11,7 +11,6 @@ export function Brand({ light = false }: { light?: boolean }) {
         Hire<span>Craft</span>
         <span className="brand-period">.</span>
       </span>
-      <span className="brand-caption">STAFFING COMPANY</span>
     </Link>
   );
 }

@@ -30,8 +30,8 @@ export default function ContactPage() {
               </span>
             </h1>
             <p>
-              Building your team? Planning your next move? Let’s talk about
-              where you want to go.
+              Building your team or a software solution? Planning your next
+              move? Let’s talk about where you want to go.
             </p>
             <div className="contact-details">
               <div className="contact-detail">
@@ -91,16 +91,16 @@ export default function ContactPage() {
             <summary>Can I contact you about career opportunities?</summary>
             <p>
               Absolutely. Select “Find my next role” in the form and tell us
-              about your background and what you’re looking for. You can attach
-              your resume when you send the prepared email from your email app.
+              about your background and what you’re looking for. You can include
+              a link to your resume or portfolio in your message.
             </p>
           </details>
           <details>
-            <summary>What happens after I prepare my message?</summary>
+            <summary>What happens after I send my message?</summary>
             <p>
-              You’ll see a link to open the draft in your email app. Review it
-              and press send there. The form does not submit or store your
-              details on a server.
+              Your inquiry is sent securely through Web3Forms to our team.
+              You’ll see a confirmation when it’s accepted, and we’ll follow up
+              using the email address you provided.
             </p>
           </details>
         </div>
